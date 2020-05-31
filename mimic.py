@@ -44,8 +44,16 @@ def create_mimic_dict(filename):
                 "who" : ["knows"]
             }
     """
-    # +++your code here+++
-    pass
+
+    mimic_dict = {}
+    mimic_list = []
+    with open(filename) as f:
+        for line in f.readlines():
+            for word in line.split():
+                mimic_list.append(word)
+                # if word in mimic_dict:
+                #     mimic_dict += [word + 1]
+    return mimic_list
 
 
 def print_mimic(mimic_dict, start_word):
